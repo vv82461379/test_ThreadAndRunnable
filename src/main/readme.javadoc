@@ -17,3 +17,11 @@
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties> 
 可以解决utf-8不能解码的问题
+
+jsp 头文件报错，是因为没有在pom文件中添加这个包，这个包的作用是servlet容器，web开发都是需要的。
+<servlet.version>4.0.0-b01</servlet.version>
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>javax.servlet-api</artifactId>
+	<version>${servlet.version}</version>
+</dependency>
